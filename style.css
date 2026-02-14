@@ -29,6 +29,15 @@ body {
     max-height: 80vh;
 }
 
+/* Center the message */
+#message-container {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff1493; /* nice pink color */
+    display: none; /* Hidden initially */
+}
+
 #question {
     font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
     font-size: 52px; /* Set font size for the question */
@@ -48,3 +57,4 @@ button {
     border: none; /* Remove button border */
     cursor: pointer; /* Set cursor to pointer on hover */
 }
+
