@@ -4,7 +4,7 @@ function selectOption(option) {
     if (option === 'yes') {
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none';
-            displayAfterYesGif(); // Show second GIF
+            displayAfterYesGif(); // Show Me.gif after Yes
         });
     } 
     
@@ -43,33 +43,16 @@ function flashRainbowColors(callback) {
 }
 
 
-// 🔹 GIF BEFORE pressing Yes
-function displayBeforeGif() {
-    var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = '';
-
-    var beforeGif = new Image();
-    beforeGif.src = 'Me.gif';  // ✅ Your first GIF
-    beforeGif.alt = 'Before GIF';
-
-    imageContainer.appendChild(beforeGif);
-}
-
-
-// 🔹 GIF AFTER pressing Yes
+// 🔥 This now ONLY runs after pressing Yes
 function displayAfterYesGif() {
     var imageContainer = document.getElementById('image-container');
     imageContainer.innerHTML = '';
 
-    var afterGif = new Image();
-    afterGif.src = 'heart.gif';  // ✅ Your second GIF (change if needed)
-    afterGif.alt = 'After GIF';
+    var gif = new Image();
+    gif.src = 'Me.gif';   // ✅ Your GIF
+    gif.alt = 'Me';
 
-    imageContainer.appendChild(afterGif);
+    imageContainer.appendChild(gif);
 
     document.getElementById('options').style.display = 'none';
 }
-
-
-// Show first GIF when page loads
-displayBeforeGif();
