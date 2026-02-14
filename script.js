@@ -2,11 +2,15 @@
 function selectOption(option) {
     if (option === 'yes') {
         flashRainbowColors(function() {
+            // Hide the question
             document.getElementById('question').style.display = 'none';
-            displayAfterYesGif(); // Show Me.gif after Yes
+            // Show the GIF only AFTER Yes
+            displayAfterYesGif();
         });
     } else if (option === 'no') {
+        // Change No button text
         document.getElementById('no-button').innerText = 'You sure?';
+        // Make Yes button bigger
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
         var newSize = parseFloat(currentFontSize) * 2;
@@ -33,26 +37,13 @@ function flashRainbowColors(callback) {
     }, 2000);
 }
 
-// Show heart.gif on page load
-function displayHeartGif() {
-    var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = ''; // Clear container
-
-    var heartGif = new Image();
-    heartGif.src = 'heart.gif'; // ✅ Your starting GIF
-    heartGif.alt = 'Heart';
-    heartGif.id = 'heart-gif';
-
-    imageContainer.appendChild(heartGif);
-}
-
 // Show Me.gif after pressing Yes
 function displayAfterYesGif() {
     var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = ''; // Clear container
+    imageContainer.innerHTML = ''; // Clear anything inside
 
     var gif = new Image();
-    gif.src = 'Me.gif';   // ✅ Your GIF after Yes
+    gif.src = 'Me.gif';  // ✅ Make sure the file is in the same folder
     gif.alt = 'Me';
     gif.id = 'after-gif';
 
@@ -61,6 +52,3 @@ function displayAfterYesGif() {
     // Hide the buttons
     document.getElementById('options').style.display = 'none';
 }
-
-// Show heart.gif on page load
-displayHeartGif();
