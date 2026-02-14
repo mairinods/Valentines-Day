@@ -23,20 +23,10 @@ body {
     height: 80vh; /* adjust vertical space */
 }
 
-
 /* Optional: make the GIF responsive */
 #after-gif {
     max-width: 100%;
     max-height: 80vh;
-}
-
-/* Center the message */
-#message-container {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #ff1493; /* nice pink color */
-    display: none; /* Hidden initially */
 }
 
 #question {
@@ -58,4 +48,3 @@ button {
     border: none; /* Remove button border */
     cursor: pointer; /* Set cursor to pointer on hover */
 }
-
