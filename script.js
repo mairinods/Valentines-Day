@@ -41,7 +41,7 @@ function displayHeartGif() {
     var heartGif = new Image();
     heartGif.src = 'heart.gif'; // ✅ Your starting GIF
     heartGif.alt = 'Heart';
-    heartGif.id = 'heart-gif';
+    heartGif.id = 'heart.gif';
 
     imageContainer.appendChild(heartGif);
 }
