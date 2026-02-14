@@ -1,25 +1,24 @@
-// Function to handle button click events
+// Handle button click events
 function selectOption(option) {
-
     if (option === 'yes') {
         flashRainbowColors(function() {
+            // Hide the question
             document.getElementById('question').style.display = 'none';
-            displayAfterYesGif(); // Show Me.gif after Yes
+            // Show the GIF only AFTER Yes
+            displayAfterYesGif();
         });
-    } 
-    else if (option === 'no') {
+    } else if (option === 'no') {
+        // Change No button text
         document.getElementById('no-button').innerText = 'You sure?';
-
+        // Make Yes button bigger
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
         var newSize = parseFloat(currentFontSize) * 2;
         yesButton.style.fontSize = newSize + 'px';
-    } 
-    else {
+    } else {
         alert('Invalid option!');
     }
 }
-
 
 // Rainbow flash effect
 function flashRainbowColors(callback) {
@@ -34,24 +33,22 @@ function flashRainbowColors(callback) {
     setTimeout(function() {
         clearInterval(interval);
         document.body.style.backgroundColor = '';
-        if (callback) {
-            callback();
-        }
+        if (callback) callback();
     }, 2000);
 }
 
-
-// Display Me.gif ONLY after pressing Yes
+// Show Me.gif after pressing Yes
 function displayAfterYesGif() {
     var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = '';
+    imageContainer.innerHTML = ''; // Clear anything inside
 
     var gif = new Image();
-    gif.src = 'Me.gif';   // ✅ Your GIF
+    gif.src = 'Me.gif';  // ✅ Make sure the file is in the same folder
     gif.alt = 'Me';
-    gif.id = 'after-gif'; // add an ID to style it with CSS
+    gif.id = 'after-gif';
 
     imageContainer.appendChild(gif);
 
+    // Hide the buttons
     document.getElementById('options').style.display = 'none';
 }
