@@ -22,6 +22,13 @@ body {
     align-items: center;
     height: 80vh; /* adjust vertical space */
 }
+#gif-message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* almost full viewport height */
+}
 
 /* Optional: make the GIF responsive */
 #after-gif {
@@ -29,13 +36,14 @@ body {
     max-height: 80vh;
 }
 
-/* Center the message */
+/* Message styling */
 #message-container {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    color: #ff1493; /* nice pink color */
-    display: none; /* Hidden initially */
+    color: #ff1493; /* pink */
+    margin-top: 20px;
+    display: none; /* hidden until Yes pressed */
 }
 
 #question {
