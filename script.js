@@ -36,30 +36,35 @@ function flashRainbowColors(callback) {
 // Show heart.gif on page load
 function displayHeartGif() {
     var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = ''; // Clear container
+    imageContainer.innerHTML = '';
 
     var heartGif = new Image();
-    heartGif.src = 'heart.gif'; // ✅ Your starting GIF
+    heartGif.src = 'heart.gif'; // ✅ Heart GIF
     heartGif.alt = 'Heart';
-    heartGif.id = 'heart.gif';
+    heartGif.id = 'heart-gif';
 
     imageContainer.appendChild(heartGif);
 }
 
-// Show Me.gif after pressing Yes
+// Show Me.gif and message after pressing Yes
 function displayAfterYesGif() {
     var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = ''; // Clear container
+    imageContainer.innerHTML = '';
 
     var gif = new Image();
-    gif.src = 'Me.gif';   // ✅ Your GIF after Yes
+    gif.src = 'Me.gif'; // ✅ Your Me.gif
     gif.alt = 'Me';
     gif.id = 'after-gif';
 
     imageContainer.appendChild(gif);
 
-    // Hide the buttons
+    // Hide buttons
     document.getElementById('options').style.display = 'none';
+
+    // Show the message below the GIF
+    var message = document.getElementById('message-container');
+    message.innerText = 'Thanks my beautiful baby girl';
+    message.style.display = 'block';
 }
 
 // Show heart.gif on page load
